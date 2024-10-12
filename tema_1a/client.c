@@ -57,16 +57,16 @@ int main() {
 
     // trimitem pachetele astfel, prima oara size apoi sir
     send(c, &net_size_a, sizeof(net_size_a), 0);
-    send(c, a, size_a, 0);  // Send string 'a'
+    send(c, a, size_a, 0);  
 
     send(c, &net_size_b, sizeof(net_size_b), 0);
-    send(c, b, size_b, 0);  // Send string 'b'
-    
+    send(c, b, size_b, 0);
+
 	uint32_t length;
 	recv(c,&length,sizeof(length),MSG_WAITALL);
 	printf("Received Length of interclasare");
 	length = ntohl(length);
-	char *intercls = (char *)malloc(length + 1); // Allocate memory including space for null-terminator
+	char *intercls = (char *)malloc(length + 1); 
 	recv(c,intercls,sizeof(char)*length,MSG_WAITALL);
 	printf("Received:%s",intercls);
     free(a);

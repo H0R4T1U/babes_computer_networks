@@ -53,7 +53,10 @@ int main() {
 
     while (1) {
         // conecteaza erver
-        c = accept(s, (struct sockaddr *)&client, &l);
+        // ce e socklen_t? C way of adding names to int,
+        // reprez lungimea adresei pe are o primeste serveru
+        // yack
+        c = accept(s, (struct sockaddr *)&client,(socklen_t*)&l);
         if (c < 0) {
             printf("Error accepting connection\n");
             return 1;
@@ -86,11 +89,11 @@ int main() {
 		printf("Sending length");
 
     	send(c, &length, sizeof(length), 0);
-   		send(c, rezultat, length, 0);  // Send string 'a'
+   		send(c, rezultat, length, 0); 
 
         free(a);
         free(b);
-        free(rezultat); // Free the result memory
+        free(rezultat); 
     }
 
     return 0;
