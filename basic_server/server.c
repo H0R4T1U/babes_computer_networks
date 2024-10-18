@@ -5,6 +5,7 @@
 #include <netinet/ip.h>
 #include <string.h>
 #include <unistd.h> 
+#include <netdb.h>
 int main() {
   int s;
   struct sockaddr_in server, client;

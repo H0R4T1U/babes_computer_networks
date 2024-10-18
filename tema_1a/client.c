@@ -66,9 +66,9 @@ int main() {
 	recv(c,&length,sizeof(length),MSG_WAITALL);
 	printf("Received Length of interclasare");
 	length = ntohl(length);
-	char *intercls = (char *)malloc(length + 1); 
+	char *intercls = (char *)malloc(length);
 	recv(c,intercls,sizeof(char)*length,MSG_WAITALL);
-	printf("Received:%s",intercls);
+	printf("Received:%s \n",intercls);
     free(a);
     free(b);
 	free(intercls);
