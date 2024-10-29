@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         Socket c = new Socket(args[0], Integer.parseInt(args[1]));
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String a, b, s;
