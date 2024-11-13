@@ -25,7 +25,7 @@ int main(int argc,char* argv[]){
         printf("Eroare la bin \n");
         return 1;
     }
-    l = sizeof(client);
+    l = sizeof(client); 
     memset(&client,0,sizeof(client));
     char buffer[100]={0};
     while(1){

@@ -17,7 +17,7 @@ int main() {
         printf("Error creating client socket\n");
         return 1;
     }
-
+    
     memset(&server, 0, sizeof(server));
     server.sin_port = htons(12345); // port
     server.sin_family = AF_INET; // ipv
